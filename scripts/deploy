@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+source $AWS_CREDENTIAL_FILE
+
+BRANCH=`git branch | awk '/^\*/{print $2}'`
+BUILD_PATH=`git rev-parse --show-toplevel`/public/
+
+case $BRANCH in
+  "master" )
+    TARGET=project-demo
+    ;;
+  "production" )
+    TARGET=project
+    ;;
+  * )
+    echo "No target destination, please select another branch."
+    exit 1
+    ;;
+esac
+
+if s3cmd --version >/dev/null 2>&1; then
+  echo "Deploying: $BRANCH to s3://$TARGET/"
+  #--access_key=$AWSAccessKeyId --secret_key=$AWSSecretKey  for s3cmd >= 1.5
+  s3cmd sync --force --reduced-redundancy --acl-public $BUILD_PATH s3://$TARGET/
+else
+    echo "Command 's3cmd' not found. Install it with 'brew install s3cmd'. Don't forget to run 'brew update' first."
+    exit 1
+fi

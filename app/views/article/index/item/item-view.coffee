@@ -1,0 +1,1 @@
+module.exports = class ArticleIndexItemView extends View

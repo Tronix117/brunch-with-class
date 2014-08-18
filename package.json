@@ -1,0 +1,26 @@
+{
+  "name": "brunch-with-class",
+  "description": "",
+  "author": "Jeremy Trufier <jeremy@trufier.com>",
+  "version": "0.0.1",
+  "repository": "",
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "canvas": "^1.1.6",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "coffee-script-brunch": "~1.7.2",
+    "css-brunch": ">= 1.0 < 1.8",
+    "jaded-brunch": "^1.7.11",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "stylus-spritesmith-brunch": "~0.1.4",
+    "stylus-brunch": "~1.6.1",
+    "uglify-js-brunch": ">= 1.0 < 1.8"
+  },
+  "devDependencies": {
+    "coffeelint-brunch": "^1.7.0",
+    "auto-reload-brunch": "^1.7.3"
+  }
+}

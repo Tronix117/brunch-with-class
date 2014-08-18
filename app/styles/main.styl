@@ -1,0 +1,25 @@
+//@import 'nib'
+
+// What is in any folder starting with `_` will not be imported by default
+// We do that in order to choose the exact order of stylus files
+
+//@import '_theme/config'
+
+@import '_mixins/fonts'
+@import '_mixins/segoe_ui_symbol'
+@import '_mixins/icons'
+// `_mixins`: reusable style for elements: buttons, blocks, ...
+// @import '_mixins/misc'
+// @import '_mixins/buttons'
+
+body
+  background: #ffffff /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #eeeeee 100%) /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#eeeeee)) /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#eeeeee 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#eeeeee 100%) /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#eeeeee 100%) /* IE10+ */
+  background: radial-gradient(ellipse at center,  #ffffff 0%,#eeeeee 100%) /* W3C */
+  //filter: unquote("progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=1 )") /* IE6-9 fallback on horizontal gradient */
+  overflow: hidden
+  heigth: 100%
