@@ -14,3 +14,5 @@ module.exports = class Layout extends Chaplin.Layout
     link.rel is 'external' or
     link.protocol not in ['https:', 'http:', ':', 'file:', location.protocol] or
     link.hostname not in [location.hostname, '']
+
+  openLink: (e)-> return

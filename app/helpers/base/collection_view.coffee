@@ -41,9 +41,16 @@ module.exports = class CollectionView extends Chaplin.CollectionView
     templateData
 
   dispose: ->
+    log "[c='font-weight:bold;margin-left:20px;color:#268bd2;']\
+❖ #{@_className}::[c][c='font-weight:bold;color:#b58900']\
+dispose[c]\t\t", @
     @beforeDispose => super
 
   render: ->
+    log "[c='font-weight:bold;margin-left:20px;color:#268bd2;']\
+❖ #{@_className}::[c][c='font-weight:bold;color:#b58900']\
+render[c]\t\t", @
+
     @beforeRender =>
       super
       @enhance()

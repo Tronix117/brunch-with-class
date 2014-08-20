@@ -25,23 +25,20 @@ module.exports = class View extends Chaplin.View
   beforeRender: (callback) -> callback()
 
   dispose: ->
+    log "[c='font-weight:bold;margin-left:20px;color:#268bd2;']\
+❖ #{@_className}::[c][c='font-weight:bold;color:#b58900']\
+dispose[c]\t\t", @
     @beforeDispose => super
-
-  # initialize: (params)->
-  #   #@ = params
-  #   # _.extend @, params # add all params to this
-  #   super
-  #   @render = _.wrap @render, (render) =>
-  #     @beforeRender?()
-  #     render()
-  #     @afterRender?()
-  #     @
 
   delegateEvents: (events, keepOld) ->
     super
     @delegateHammerEvents()
 
   render: ->
+    log "[c='font-weight:bold;margin-left:20px;color:#268bd2;']\
+❖ #{@_className}::[c][c='font-weight:bold;color:#b58900']\
+render[c]\t\t", @
+
     @beforeRender =>
       super
       @enhance()
