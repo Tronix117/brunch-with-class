@@ -2,22 +2,32 @@
 
 This is HTML5 application, built with [Brunch](http://brunch.io).
 
+## Installation
+Clone this repo manually with git or use `brunch new git@github.com:Tronix117/brunch-with-class.git`
+
 ## Getting started
-* Install node.js from the official website
-* Install cairo for spritesheet generation (brew install cairo), you may install brew and xquartz before
-* Install [Brunch](http://brunch.io): `npm install -g brunch`.
-* Install Brunch plugins: `npm install`.
-* Install [Bower](http://bower.io) components: `bower install` (if bower is not installed on your system, install it with `npm install -g bower`)
-* Watch the project with continuous rebuild by
-`brunch watch --server`. This will also launch HTTP server.
-* Or build the minified project with `brunch build --optimize`.
 
-Open the `public/` dir to see the result.
-
-* Write your code in `app` dir.
-* Put static files that should be copied (index.html etc) to `app/assets`.
-* Manage dependencies with [Bower](http://bower.io) or simply put
-  third-party styles & scripts in `vendor` dir.
+* Install (if you don't have them):
+    * [Node.js](http://nodejs.org): `brew install node` on OS X
+    * Install cairo for spritesheet generation (brew install cairo), you may install brew and xquartz before
+    * [Brunch](http://brunch.io): `npm install -g brunch`
+    * [Bower](http://bower.io): `npm install -g bower`
+    * [GraphicsMagick](http://www.graphicsmagick.org/): `brew install graphicsmagick`
+    * [Cairo](http://cairographics.org/): `brew install cairo`
+    
+    * Brunch plugins and Bower dependencies: `npm install & bower install`
+* Run:
+    * `brunch watch --server` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
+    * `brunch build --production` — builds minified project for production. Open the `public/` dir to see the result.
+* Learn:
+    * Write your code in `app` dir.
+    * Put static files that should be copied (index.html etc) to `app/assets`.
+    * Manage dependencies with [Bower](http://bower.io) bower install --save <package>
+    or simply put third-party styles & scripts in `vendor` dir.
+* About: 
+    * [Brunch site](http://brunch.io), 
+    * [Bower site](http://bower.io),
+    * [Chaplin site](http://chaplinjs.org),
 
 ## Coding
 

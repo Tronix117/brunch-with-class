@@ -1,7 +1,7 @@
 module.exports = class View extends Chaplin.View
   autoRender: yes
 
-  # # Precompiled templates function initializer.
+  ## Precompiled templates function initializer.
   getTemplateFunction: ->
     return @template if @template
     if _.endsWith @_className, 'View'
@@ -29,10 +29,6 @@ module.exports = class View extends Chaplin.View
 ❖ #{@_className}::[c][c='font-weight:bold;color:#b58900']\
 dispose[c]\t\t", @
     @beforeDispose => super
-
-  delegateEvents: (events, keepOld) ->
-    super
-    @delegateHammerEvents()
 
   render: ->
     log "[c='font-weight:bold;margin-left:20px;color:#268bd2;']\
@@ -75,3 +71,7 @@ render[c]\t\t", @
   # redirectTo: (url, options = {}) ->
   #   @publishEvent '!router:route', url, options, (routed) ->
   #     throw new Error 'View#redirectTo: no route matched' unless routed
+
+  # delegateEvents: (events, keepOld) ->
+  # super
+  # @delegateHammerEvents()

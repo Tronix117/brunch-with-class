@@ -45,6 +45,12 @@
         "lodash": "*"
       }
     },
+    "bootstrap": {
+      "main": [
+        "./dist/js/bootstrap.js",
+        "./dist/css/bootstrap.css"
+      ]
+    },
     "font-awesome": {
       "main": [
         "font",
