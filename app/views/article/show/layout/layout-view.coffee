@@ -18,7 +18,7 @@ module.exports = class ArticleShowLayoutView extends View
   onArticleRender: (view)->
     @$('article').velocity 'transition.slideRightBigIn'
 
-  onNavRightAction:(e)->
+  onNavRightAction: (e)->
     e.preventDefault()
     mediator.publish 'pager:next'
 

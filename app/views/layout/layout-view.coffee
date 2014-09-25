@@ -1,4 +1,4 @@
-module.exports = class LayoutView extends Layout
+module.exports = class LayoutView extends View
   container: 'body'
   regions:
     content: '#content'

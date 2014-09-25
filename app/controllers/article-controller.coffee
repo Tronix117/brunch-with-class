@@ -1,14 +1,4 @@
-module.exports = class ArticleController extends Controller
-
-  beforeAction: (params, route)->
-    super
-
-    @reuse 'layout', LayoutView
-
-    global._dummyCollection = new Collection unless global._dummyCollection
-    @reuse 'pager', NavPagerView,
-      region: 'tab-pager'
-      collection: global._dummyCollection # just passing fake collection
+module.exports = class ArticleController extends AbstractAppController
 
   index: (params, route)->
     # Do we want to filter by categoryId or to index all articles ?
@@ -21,7 +11,6 @@ module.exports = class ArticleController extends Controller
       model: mediator.categories.get ~~params.categoryId # contextuals infos
       collection: articles
 
-
   show: (params, route)->
     model = mediator.articles.get ~~params.articleId
     categoryId = model.get 'category_id'
@@ -30,7 +19,7 @@ module.exports = class ArticleController extends Controller
     
     # We need an extra layer between global Layout and article to handle
     # some transitions and animations between articles
-    @reuse 'article-layout', ArticleShowLayoutView, 
+    @reuse 'article-layout', ArticleShowLayoutView,
       region: 'content'
       model: mediator.categories.get ~~categoryId
 

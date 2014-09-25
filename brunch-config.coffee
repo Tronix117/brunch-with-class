@@ -59,11 +59,13 @@ exports.config =
     coffeelint:
       pattern: /^app\/.*\.coffee$/
       options:
-        no_trailing_semicolons:
-          level: "ignore"
         no_trailing_whitespace:
           level: "warn"
+        no_interpolation_in_single_quotes:
+          level: "error"
         no_backticks:
+          level: "warn"
+        no_empty_param_list:
           level: "warn"
         indentation:
           value: 2
@@ -71,59 +73,14 @@ exports.config =
         max_line_length:
           value: 80
           level: "warn"
+        colon_assignment_spacing:
+          spacing :
+            left: 0
+            right: 1
+          level: "warn"
+        prefer_english_operator:
+          level: "warn"
 
     # AutoReload should not be enabled in production
     autoReload:
       enabled: not production
-
-    sprites:
-      # Use sprite features.
-      enabled: true
-
-      # Directory in which to output sprite sheet images.
-      outputDir: 'images/sprites',
-
-      # File name of output sprite sheet images.
-      # outputFile: '{{name}}.png',
-
-      # Include provided `sprite` mixin when compiling Stylus.
-      includeMixins: true
-
-      # Sprite mixin will `@extend` a sprite sheet's styles, instead of
-      # including them directly in the selector in which the mixin is used.
-      # useExtendDirective: true,
-
-      # Name of the default sprite sheet to use when one is not passed to the
-      # provided Stylus mixin or functions.
-      defaultSheet: 'default',
-
-      # Sprite sheets to generate. The regular expression matches images to
-      # include in that particular sprite sheet.
-      spriteSheets:
-        'default': /^app\/assets\/images\/_default\/(.*)\.png$/
-        'ui': /^app\/assets\/images\/_ui\/(.*)\.png$/
-        'visual': /^app\/assets\/images\/_visuals\/(.*)\.png$/
-
-      # Engine Spritemith uses to generate images ('phantomjs', 'canvas', 'gm')
-      # See https:#github.com/Ensighten/spritesmith for more information.
-      engine: 'gm',
-
-      # Image packing algoritm ('binary-tree', 'top-down', 'left-right', 'diagonal', 'alt-diagonal')
-      algoritm: 'top-down'
-
-      # Padding in pixels to add between sprite images
-      # padding: 0
-
-      # Options to pass through to engine for settings
-      # exportOpts: 
-        # Format of output sprite sheets ('png', 'jpeg'); Canvas and gm engines only
-        # format: 'png'
-
-        # Quality of output sprite sheets; gm engine only
-        # quality: 75
-
-        # Milliseconds to wait until terminating PhantomJS script; phantomjs engine only
-        # timeout: 10000
-
-      # Options to pass through to engine for export
-      # engineOpts: {},

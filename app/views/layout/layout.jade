@@ -2,5 +2,6 @@
 .tab-pager
 
 //- For debugging
-.btn-icon.icon-settings(style="position:absolute; bottom: 20px; left: 20px; z-index: 100;")
-.debug
+if ENV === 'development'
+  .btn-icon.icon-settings
+  .debug

@@ -1,24 +1,10 @@
-global.mediator = require 'mediator'
-
-module.exports = class Application extends Chaplin.Application
+module.exports = class Application extends Chapeau.Application
   title: ''
   options:
     routes: require 'routes'
-    controllerSuffix: '-controller'
 
-  constructor: (options) ->
-    _.extend(@options, options)
-
-    super @options
-
-  initMediator: ->
-    # Declare additional properties for mediator bellow
-
-    mediator.articles = new ArticleCollection
-    mediator.categories = new CategoryCollection
-
-    # Seal the mediator
-    super
-
-  start: ->
-    super
+  # # Prestart can be used to defer the start of the application
+  # # It can be useful if you want to fetch some infos from the API before
+  # # anything.
+  # beforeStart: (start)->
+  #   super

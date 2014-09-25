@@ -13,10 +13,16 @@ html(class="no-js", lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     title
     meta(name="description", content="")
-    meta(name="viewport", content="width=device-width")
+    meta(name="viewport", content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+
 
     link(rel="stylesheet", href="/css/vendor.css")
     link(rel="stylesheet", href="/css/app.css")
+
+    script(type="text/javascript").
+      window.ENV = 'production'
 
     script(type="text/javascript", src="/js/vendor.js")
     script(type="text/javascript", src="/js/app.js", onload="require('initialize');")

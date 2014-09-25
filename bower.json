@@ -20,7 +20,8 @@
     "velocity": "~0.10.1",
     "marked": "~0.3.2",
     "backbone.hammer": "~1.0.1",
-    "log": "~0.1.5"
+    "log": "~0.1.5",
+    "chapeau": "~0.1.0"
   },
   "overrides": {
     "marked": {

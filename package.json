@@ -14,7 +14,6 @@
     "css-brunch": ">= 1.0 < 1.8",
     "jaded-brunch": "^1.7.11",
     "javascript-brunch": ">= 1.0 < 1.8",
-    "stylus-spritesmith-brunch": "~0.1.4",
     "stylus-brunch": "~1.6.1",
     "uglify-js-brunch": ">= 1.0 < 1.8"
   },
