@@ -9,16 +9,31 @@
     "test": "brunch test"
   },
   "dependencies": {
+    "backbone": "^1.1.2",
+    "backbone.collectionsubset": "^0.1.1",
+    "backbone.hammer": "~1.0.1",
+    "bootstrap": "~3.2.0",
+    "chapeau": "git@github.com:Tronix117/chapeau.git#master",
+    "chaplin": "^1.0.0",
+    "console-polyfill": "^0.1.1",
+    "hammer": "0.0.5",
+    "jquery": "^2.1.1",
+    "lodash": "^2.4.1",
+    "log-with-style": "~0.1.5",
+    "marked": "~0.3.2",
+    "underscore.string": "^2.3.3",
+    "velocity-animate": "~0.10.1"
+  },
+  "devDependencies": {
+    "coffeelint-brunch": "^1.7.0",
+    "auto-reload-brunch": "^1.7.3",
     "clean-css-brunch": ">= 1.0 < 1.8",
     "coffee-script-brunch": "~1.7.2",
     "css-brunch": ">= 1.0 < 1.8",
     "jaded-brunch": "^1.7.11",
     "javascript-brunch": ">= 1.0 < 1.8",
     "stylus-brunch": "~1.6.1",
-    "uglify-js-brunch": ">= 1.0 < 1.8"
-  },
-  "devDependencies": {
-    "coffeelint-brunch": "^1.7.0",
-    "auto-reload-brunch": "^1.7.3"
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "brunch": "=2.9.1"
   }
 }

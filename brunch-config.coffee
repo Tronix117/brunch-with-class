@@ -7,6 +7,26 @@ exports.config =
   # Let's minify everything when production
   optimize: production
 
+  # Configuration for npm
+
+  npm:
+    globals: 
+      Backbone: 'backbone'
+      jQuery: 'jquery'
+      $: 'jquery'
+      underscore: 'lodash'
+      lodash: 'lodash'
+      _: 'lodash'
+      log: 'log-with-style'
+      'underscore.string': 'underscore.string'
+      'Hammer': 'hammerjs'
+      'backbone.hammer': 'backbone.hammer'
+      'backbone.collectionsubset': 'backbone.collectionsubset'
+      'velocity': 'velocity-animate'
+      # Chaplin: 'chaplin'
+      # Chapeau: 'chapeau'
+    static: ['node_modules/chaplin/chaplin.js', 'node_modules/chapeau/build/chapeau.js']
+
   # Like to get notifications if available
   notifications: true
 
@@ -14,16 +34,25 @@ exports.config =
   #paths:
   #  public: 'public'
 
+  modules:
+    nameCleaner: (path)->
+      # Remove file extension added after brunch v2
+      path = path.substr(0, path.lastIndexOf('.')) or path
+      path.replace(/^app\//, '')
+
   files:
     javascripts:
       joinTo: 
         # Better two have app.js AND vendor.js for caching reasons (vendor is not updated as often)
         'js/app.js': /^(app)/
-        'js/vendor.js': /^(vendor|bower_components)/
+        'js/vendor.js': /^(vendor|node_modules)/
+      order:
+        before: /^node_modules\/(jquery)/
+        after: /^node_modules\/(chapeau)/
     stylesheets:
       joinTo:
         'css/app.css': /^(app)/
-        'css/vendor.css': /^(vendor|bower_components)/
+        'css/vendor.css': /^(vendor|node_modules)/
       order:
         before: /^app(\/|\\)styles/
     templates: 

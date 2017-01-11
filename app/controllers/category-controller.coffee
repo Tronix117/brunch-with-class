@@ -1,3 +1,5 @@
+AbstractAppController = require './abstract/app-controller'
+
 module.exports = class CategoryController extends AbstractAppController
 
   index: (params, route)->
